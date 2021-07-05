@@ -18,4 +18,14 @@ describe('Turn', () => {
   it('should instantiate a new turn', () => {
     expect(turn).to.be.an.instanceof(Turn);
   });
+
+  it('should have a user guess', () => {
+    expect(turn.guess).to.equal('array');
+    expect(turn.guess).to.be.a('string');
+  });
+
+  it('should have a current card in play', () => {
+    expect(turn.currentCard).to.equal(card)
+    expect(turn.currentCard).to.be.an('object')
+  })
 });
