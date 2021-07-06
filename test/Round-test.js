@@ -55,7 +55,7 @@ describe('Round', () => {
   it('should check for a correct guess', () => {
     const newTurn = round.takeTurn('object');
     expect(newTurn).to.equal('Correct!');
-  })
+  });
 
   it('should push card id into incorrect guesses', () => {
     const incorrectGuesses = round.incorrectGuesses;
@@ -97,5 +97,4 @@ describe('Round', () => {
     const displayMsg = round.endRound();
     expect(displayMsg).to.equal('** Round over! ** You answered 67% of the questions correctly!')
   });
-
 });
