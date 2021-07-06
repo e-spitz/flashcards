@@ -4,11 +4,13 @@ const Card = require('../src/Card');
 const Turn = require('../src/Turn');
 
 describe('Turn', () => {
-  let card, turn;
+  let card, turn, card1, turn1;
 
   beforeEach(() => {
     card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     turn = new Turn('array', card);
+    card1 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array')
+    turn1 = new Turn('array', card1);
   });
 
   it('should be a function', () => {
@@ -44,8 +46,13 @@ describe('Turn', () => {
     expect(checkGuess).to.equal(false);
   });
 
-  it('should be able to give feedback after evaluating guess', () => {
+  it('should display feedback if guess is incorrect', () => {
     const feedback = turn.giveFeedback();
     expect(feedback).to.equal('Incorrect!');
+  });
+
+  it('should display different feedback if guess is correct', () => {
+    const feedback1 = turn1.giveFeedback();
+    expect(feedback1).to.equal('Correct!');
   });
 });
