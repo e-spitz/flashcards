@@ -58,15 +58,25 @@ describe('Round', () => {
   })
 
   it('should push card id into incorrect guesses', () => {
+    const incorrectGuesses = round.incorrectGuesses;
     round.takeTurn('array');
-    expect(round.incorrectGuesses).to.deep.equal([1]);
-    expect(round.incorrectGuesses.length).to.equal(1);
+    expect(incorrectGuesses).to.deep.equal([1]);
+    expect(incorrectGuesses.length).to.equal(1);
     round.takeTurn('function');
-    expect(round.incorrectGuesses).to.deep.equal([1, 2]);
-    expect(round.incorrectGuesses.length).to.equal(2);
+    expect(incorrectGuesses).to.deep.equal([1, 2]);
+    expect(incorrectGuesses.length).to.equal(2);
     round.takeTurn('mutator method');
-    expect(round.incorrectGuesses).to.deep.equal([1, 2]);
-    expect(round.incorrectGuesses.length).to.equal(2);
+    expect(incorrectGuesses).to.deep.equal([1, 2]);
+    expect(incorrectGuesses.length).to.equal(2);
+  });
+
+  it('should display whether answer was correct or incorrect', () => {
+    const turn1 = round.takeTurn('array');
+    expect(turn1).to.equal('Incorrect!');
+    const turn2 = round.takeTurn('function');
+    expect(turn2).to.equal('Incorrect!');
+    const turn3 = round.takeTurn('mutator method');
+    expect(turn3).to.equal('Correct!');
   });
 
 });
