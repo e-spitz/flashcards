@@ -33,4 +33,9 @@ describe('Turn', () => {
     const returnedGuess = turn.returnGuess();
     expect(returnedGuess).to.equal('array');
   });
+
+  it('should be able to return the current card in play', () => {
+    const returnCurrentCard = turn.returnCard();
+    expect(returnCurrentCard).to.equal(card);
+  });
 });
