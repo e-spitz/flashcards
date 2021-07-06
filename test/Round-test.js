@@ -23,4 +23,14 @@ describe('Round', () => {
     expect(round).to.be.an.instanceof(Round);
   });
 
+  it('should have a deck of a cards in a round', () => {
+    expect(round.deck.cards).to.be.an('array')
+    expect(round.deck).to.equal(deck);
+  });
+
+  it('should return the current card being played', () => {
+    const returnCard = round.returnCurrentCard();
+    expect(returnCard).to.equal(card1)
+  });
+
 });
