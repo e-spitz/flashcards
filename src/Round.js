@@ -26,6 +26,11 @@ class Round {
     let percentCorrect = Math.round((correctGuesses / this.turns) * 100);
     return percentCorrect;
   }
+  
+  endRound() {
+    let percent = this.calculatePercentCorrect();
+    return `** Round over! ** You answered ${percent}% of the questions correctly!`
+  }
 }
 
 module.exports = Round;

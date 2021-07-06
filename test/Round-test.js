@@ -87,4 +87,15 @@ describe('Round', () => {
     expect(correctAvg).to.equal(67);
   });
 
+  it('should display a message at the end of the round showing percent of correct guesses', () => {
+    round.takeTurn('object')
+    round.takeTurn('array')
+    round.takeTurn('iteration method')
+    const correctAvg = round.calculatePercentCorrect();
+    expect(correctAvg).to.equal(67);
+
+    const displayMsg = round.endRound();
+    expect(displayMsg).to.equal('** Round over! ** You answered 67% of the questions correctly!')
+  });
+
 });
