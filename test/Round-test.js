@@ -33,4 +33,13 @@ describe('Round', () => {
     expect(returnCard).to.equal(card1)
   });
 
+  it('should be able to count turns', () => {
+    expect(round.turns).to.equal(0);
+  });
+
+  it('should be able to store incorrect guesses', () => {
+    expect(round.incorrectGuesses).to.be.an('array');
+    expect(round.incorrectGuesses).to.deep.equal([]);
+  });
+
 });
