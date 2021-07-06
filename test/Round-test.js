@@ -79,4 +79,12 @@ describe('Round', () => {
     expect(turn3).to.equal('Correct!');
   });
 
+  it('should be able to calculate the percent of correct guesses', () => {
+    round.takeTurn('object')
+    round.takeTurn('array')
+    round.takeTurn('iteration method')
+    const correctAvg = round.calculatePercentCorrect();
+    expect(correctAvg).to.equal(67);
+  });
+
 });
