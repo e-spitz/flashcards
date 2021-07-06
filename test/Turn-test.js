@@ -43,4 +43,9 @@ describe('Turn', () => {
     const checkGuess = turn.evaluateGuess();
     expect(checkGuess).to.equal(false);
   });
+
+  it('should be able to give feedback after evaluating guess', () => {
+    const feedback = turn.giveFeedback();
+    expect(feedback).to.equal('Incorrect!');
+  });
 });
