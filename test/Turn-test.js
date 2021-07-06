@@ -22,13 +22,13 @@ describe('Turn', () => {
   });
 
   it('should have a user guess', () => {
-    expect(turn.guess).to.equal('array');
     expect(turn.guess).to.be.a('string');
+    expect(turn.guess).to.equal('array');
   });
 
   it('should have a current card in play', () => {
-    expect(turn.currentCard).to.equal(card);
     expect(turn.currentCard).to.be.an('object');
+    expect(turn.currentCard).to.equal(card);
   });
 
   it('should be able to return the user guess', () => {
