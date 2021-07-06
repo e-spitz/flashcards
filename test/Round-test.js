@@ -57,4 +57,16 @@ describe('Round', () => {
     expect(newTurn).to.equal('Correct!');
   })
 
+  it('should push card id into incorrect guesses', () => {
+    round.takeTurn('array');
+    expect(round.incorrectGuesses).to.deep.equal([1]);
+    expect(round.incorrectGuesses.length).to.equal(1);
+    round.takeTurn('function');
+    expect(round.incorrectGuesses).to.deep.equal([1, 2]);
+    expect(round.incorrectGuesses.length).to.equal(2);
+    round.takeTurn('mutator method');
+    expect(round.incorrectGuesses).to.deep.equal([1, 2]);
+    expect(round.incorrectGuesses.length).to.equal(2);
+  });
+
 });
