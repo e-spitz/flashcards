@@ -22,7 +22,14 @@ describe('Deck', () => {
   });
 
   it('should store cards', () => {
-    expect(deck.cards).to.deep.equal([card1, card2, card3])
+    expect(deck.cards).to.be.an('array');
+    expect(deck.cards).to.deep.equal([card1, card2, card3]);
+    expect(deck.cards.length).to.equal(3);
+  });
+
+  it('should be able to count how many cards are in deck', () => {
+    const cardAmt = deck.countCards();
+    expect(cardAmt).to.equal(3);
   })
 
 });
