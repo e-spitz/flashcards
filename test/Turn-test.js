@@ -8,8 +8,8 @@ describe('Turn', () => {
 
   beforeEach(() => {
     card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    card1 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
     turn = new Turn('array', card);
-    card1 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array')
     turn1 = new Turn('array', card1);
   });
 
@@ -22,13 +22,13 @@ describe('Turn', () => {
   });
 
   it('should have a user guess', () => {
-    expect(turn.guess).to.equal('array');
     expect(turn.guess).to.be.a('string');
+    expect(turn.guess).to.equal('array');
   });
 
   it('should have a current card in play', () => {
-    expect(turn.currentCard).to.equal(card);
     expect(turn.currentCard).to.be.an('object');
+    expect(turn.currentCard).to.equal(card);
   });
 
   it('should be able to return the user guess', () => {
