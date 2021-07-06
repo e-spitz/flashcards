@@ -45,6 +45,16 @@ describe('Round', () => {
   it('should update turn count when a guess is made', () => {
     round.takeTurn();
     expect(round.turns).to.equal(1);
+  });
+
+  it('should check for an incorrect guess', () => {
+    const newTurn = round.takeTurn('array');
+    expect(newTurn).to.equal('Incorrect!');
+  });
+
+  it('should check for a correct guess', () => {
+    const newTurn = round.takeTurn('object');
+    expect(newTurn).to.equal('Correct!');
   })
 
 });
