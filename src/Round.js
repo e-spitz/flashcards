@@ -11,7 +11,9 @@ class Round {
     return this.deck.cards[this.turns];
   }
 
-  
+  takeTurn() {
+    return this.turns++
+  }
 
 }
 

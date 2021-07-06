@@ -42,4 +42,9 @@ describe('Round', () => {
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
+  it('should update turn count when a guess is made', () => {
+    round.takeTurn();
+    expect(round.turns).to.equal(1);
+  })
+
 });
