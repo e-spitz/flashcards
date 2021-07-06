@@ -38,4 +38,9 @@ describe('Turn', () => {
     const returnCurrentCard = turn.returnCard();
     expect(returnCurrentCard).to.equal(card);
   });
+
+  it('should be able to evaluate the user guess', () => {
+    const checkGuess = turn.evaluateGuess();
+    expect(checkGuess).to.equal(false);
+  });
 });
