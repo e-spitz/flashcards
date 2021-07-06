@@ -25,7 +25,12 @@ describe('Turn', () => {
   });
 
   it('should have a current card in play', () => {
-    expect(turn.currentCard).to.equal(card)
-    expect(turn.currentCard).to.be.an('object')
-  })
+    expect(turn.currentCard).to.equal(card);
+    expect(turn.currentCard).to.be.an('object');
+  });
+
+  it('should be able to return the user guess', () => {
+    const returnedGuess = turn.returnGuess();
+    expect(returnedGuess).to.equal('array');
+  });
 });
