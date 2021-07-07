@@ -70,6 +70,15 @@ describe('Round', () => {
     expect(incorrectGuesses.length).to.equal(2);
   });
 
+  it('should store the start time of the round', () => {
+    expect(round.startTime).to.equal(Date.now());
+  });
+
+  it('should be able to calculate total game time', () => {
+    expect(round.calculateGameTime).to.be.a('function')
+    expect(round.calculateGameTime()).to.be.a('number')
+  })
+
   it('should display whether answer was correct or incorrect', () => {
     const turn1 = round.takeTurn('array');
     expect(turn1).to.equal('Incorrect!');
