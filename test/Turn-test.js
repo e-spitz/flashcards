@@ -48,11 +48,11 @@ describe('Turn', () => {
 
   it('should display feedback if guess is incorrect', () => {
     const feedback = turn.giveFeedback();
-    expect(feedback).to.equal('Incorrect!');
+    expect(feedback).to.equal('incorrect! The correct answer is object.');
   });
 
   it('should display different feedback if guess is correct', () => {
     const feedback1 = turn1.giveFeedback();
-    expect(feedback1).to.equal('Correct!');
+    expect(feedback1).to.equal('correct!');
   });
 });
