@@ -5,6 +5,7 @@ class Round {
     this.deck = deck;
     this.turns = 0;
     this.incorrectGuesses = [];
+    this.startTime = Date.now();
   }
 
   returnCurrentCard() {
