@@ -76,6 +76,7 @@ describe('Round', () => {
 
   it('should be able to calculate total game time', () => {
     expect(round.calculateGameTime).to.be.a('function')
+    expect(round.calculateGameTime()).to.be.a('number')
   })
 
   it('should display whether answer was correct or incorrect', () => {

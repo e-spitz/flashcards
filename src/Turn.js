@@ -17,7 +17,7 @@ class Turn {
   }
 
   giveFeedback() {
-    return this.evaluateGuess() ? 'Correct!' : 'Incorrect!';
+    return this.evaluateGuess() ? 'Correct!' : `Incorrect! The correct answer is ${this.currentCard.correctAnswer}`;
   }
 }
 

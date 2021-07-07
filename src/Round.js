@@ -29,13 +29,21 @@ class Round {
   }
 
   calculateGameTime() {
-    return;
+    let milliseconds = (Date.now() - this.startTime);
+    let seconds = Math.round((milliseconds / 1000) % 60);
+    (seconds < 10) ? seconds = `0${seconds}` : seconds = seconds;
+    let minutes = Math.round(milliseconds / 60000)
+    let totalTime;
+    (minutes === 1) ? totalTime = `1:${seconds}` : totalTime = `${minutes}:${seconds}`;
+    return totalTime;
   }
+
 
   endRound() {
     let percent = this.calculatePercentCorrect();
-    console.log(`** Round over! ** You answered ${percent}% of the questions correctly!`);
-    return `** Round over! ** You answered ${percent}% of the questions correctly!`;
+    let time = this.calculateGameTime();
+    console.log(`** Round over! ** You answered ${percent}% of the questions correctly! Round time: ${time}`);
+    return `** Round over! ** You answered ${percent}% of the questions correctly! Round time: ${time}`;
   }
 
 }
