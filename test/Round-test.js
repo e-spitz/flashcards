@@ -49,12 +49,12 @@ describe('Round', () => {
 
   it('should check for an incorrect guess', () => {
     const newTurn = round.takeTurn('array');
-    expect(newTurn).to.equal('Incorrect!');
+    expect(newTurn).to.equal('incorrect! The correct answer is object.');
   });
 
   it('should check for a correct guess', () => {
     const newTurn = round.takeTurn('object');
-    expect(newTurn).to.equal('Correct!');
+    expect(newTurn).to.equal('correct!');
   });
 
   it('should push card id into incorrect guesses', () => {
@@ -75,17 +75,17 @@ describe('Round', () => {
   });
 
   it('should be able to calculate total game time', () => {
-    expect(round.calculateGameTime).to.be.a('function')
-    expect(round.calculateGameTime()).to.be.a('number')
+    expect(round.calculateGameTime).to.be.a('function');
+    expect(round.calculateGameTime()).to.be.a('string');
   })
 
   it('should display whether answer was correct or incorrect', () => {
     const turn1 = round.takeTurn('array');
-    expect(turn1).to.equal('Incorrect!');
+    expect(turn1).to.equal('incorrect! The correct answer is object.');
     const turn2 = round.takeTurn('function');
-    expect(turn2).to.equal('Incorrect!');
+    expect(turn2).to.equal('incorrect! The correct answer is array.');
     const turn3 = round.takeTurn('mutator method');
-    expect(turn3).to.equal('Correct!');
+    expect(turn3).to.equal('correct!');
   });
 
   it('should be able to calculate the percent of correct guesses', () => {
@@ -96,7 +96,7 @@ describe('Round', () => {
     expect(correctAvg).to.equal(67);
   });
 
-  it('should display a message at the end of the round showing percent of correct guesses', () => {
+  it('should display a message at the end of the round', () => {
     round.takeTurn('object')
     round.takeTurn('array')
     round.takeTurn('iteration method')
@@ -104,6 +104,6 @@ describe('Round', () => {
     expect(correctAvg).to.equal(67);
 
     const displayMsg = round.endRound();
-    expect(displayMsg).to.equal('** Round over! ** You answered 67% of the questions correctly!')
+    expect(displayMsg).to.be.a('string')
   });
 });
