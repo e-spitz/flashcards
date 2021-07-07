@@ -28,6 +28,10 @@ class Round {
     return percentCorrect;
   }
 
+  calculateGameTime() {
+    return;
+  }
+
   endRound() {
     let percent = this.calculatePercentCorrect();
     console.log(`** Round over! ** You answered ${percent}% of the questions correctly!`);

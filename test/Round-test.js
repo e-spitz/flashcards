@@ -71,7 +71,11 @@ describe('Round', () => {
   });
 
   it('should store the start time of the round', () => {
-    expect(round.startTime).to.equal(Date.now())
+    expect(round.startTime).to.equal(Date.now());
+  });
+
+  it('should be able to calculate total game time', () => {
+    expect(round.calculateGameTime).to.be.a('function')
   })
 
   it('should display whether answer was correct or incorrect', () => {
