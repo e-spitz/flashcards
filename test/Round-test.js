@@ -24,13 +24,13 @@ describe('Round', () => {
   });
 
   it('should have a deck of a cards in a round', () => {
-    expect(round.deck.cards).to.be.an('array')
+    expect(round.deck.cards).to.be.an('array');
     expect(round.deck).to.equal(deck);
   });
 
   it('should return the current card being played', () => {
     const returnCard = round.returnCurrentCard();
-    expect(returnCard).to.equal(card1)
+    expect(returnCard).to.equal(card1);
   });
 
   it('should be able to count turns', () => {
@@ -77,7 +77,7 @@ describe('Round', () => {
   it('should be able to calculate total game time', () => {
     expect(round.calculateGameTime).to.be.a('function');
     expect(round.calculateGameTime()).to.be.a('string');
-  })
+  });
 
   it('should display whether answer was correct or incorrect', () => {
     const turn1 = round.takeTurn('array');
@@ -89,21 +89,21 @@ describe('Round', () => {
   });
 
   it('should be able to calculate the percent of correct guesses', () => {
-    round.takeTurn('object')
-    round.takeTurn('array')
-    round.takeTurn('iteration method')
+    round.takeTurn('object');
+    round.takeTurn('array');
+    round.takeTurn('iteration method');
     const correctAvg = round.calculatePercentCorrect();
     expect(correctAvg).to.equal(67);
   });
 
   it('should display a message at the end of the round', () => {
-    round.takeTurn('object')
-    round.takeTurn('array')
-    round.takeTurn('iteration method')
+    round.takeTurn('object');
+    round.takeTurn('array');
+    round.takeTurn('iteration method');
     const correctAvg = round.calculatePercentCorrect();
     expect(correctAvg).to.equal(67);
 
     const displayMsg = round.endRound();
-    expect(displayMsg).to.be.a('string')
+    expect(displayMsg).to.be.a('string');
   });
 });

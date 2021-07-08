@@ -26,7 +26,7 @@ const confirmUpdate = (id, round) => {
   return {
     name: 'feedback',
     message: `Your answer of ${id} is ${feedback}.`
-  }
+  };
 }
 
 async function main(round) {
