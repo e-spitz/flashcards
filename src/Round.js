@@ -31,8 +31,8 @@ class Round {
   calculateGameTime() {
     let milliseconds = (Date.now() - this.startTime);
     let seconds = Math.round((milliseconds / 1000) % 60);
-    (seconds < 10) ? seconds = `0${seconds}` : seconds = seconds;
-    let minutes = Math.round(milliseconds / 60000)
+    (seconds < 10) ? seconds = `0${seconds}` : seconds;
+    let minutes = Math.round(milliseconds / 60000);
     let totalTime;
     (minutes === 1) ? totalTime = `1:${seconds}` : totalTime = `${minutes}:${seconds}`;
     return totalTime;
