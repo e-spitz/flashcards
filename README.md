@@ -1,79 +1,32 @@
-# FlashCards Starter Kit
+# FlashCards Game
 
-## Fork This Repo
+## Abstract
+FlashCards is a learning project built into a game! Using basic keyboard controls through the command line interface, the user can test their knowledge over array prototypes and objects! The game goes through thirty different cards. Each card will ask the user a question. The user is presented with three answers to choose from. Once the user chooses an answer, the game will return feedback on whether the answer chosen is correct! It will display the correct answer if the user answers incorrectly! After the user completes the deck, the game returns the percent of correct answers that the user answered and will also show the time it took to play. What a fun way to spice up some dense information!
 
-On the top right corner of this page, click the **Fork** button.
+## How it Runs
 
-## Setup
+![start game](https://media.giphy.com/media/fukquZXFyqXhgTqtHK/giphy.gif)
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
+## Technologies Used
 
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
+  - JavaScript
+  - Mocha 6.1.4
+  - Chai 4.2.0
+  - Eslint 5.16.0
+  - Atom Text Editor
+  - Inquirer 6.3.1
 
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
+## Install and Setup
 
-```bash
-npm install
-```
+- Fork this repository
+- Clone this [repo](https://github.com/e-spitz/flashcards)
+- From the terminal, navigate into the cloned repository and install library dependencies by running the command `npm install` in your terminal
+- Launch the application by entering the command `node index.js`
+- Use the `up/down arrow` keys to select an answer
+- Press the `return` key to submit answer
+- Press `return` to move to new flashcard
+- Continue these steps through all 30 flashcards
+- A percentage of correct answers will be given at the end of game along with the round time
+- Exit game at any time by pressing `control + c`
 
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
-
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
-
-```bash
-Node server running on port 3000
-```
-
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
-
-
-## Where to Add Your Code
-
-### JavaScript
-
-**Create all of your feature code files in the `src` directory.**
-
-We will be using the `module.exports` and `require` syntax to share code across files.
-
-## How to View Your Code in Action
-
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
-
-```bash
-node index.js
-```
-
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
-
----
+![end of game](https://media.giphy.com/media/1vbSd5nqdApyMyO08g/giphy.gif)
